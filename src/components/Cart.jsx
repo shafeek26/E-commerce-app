@@ -16,7 +16,7 @@ useEffect(() => {
   const fetchCartData = async () => {
     try {
       const data = await getDocs(productRef);
-      const result = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      const result = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       dispatch({
         type: "Cart_PRODUCTS",
         payload: result,
@@ -26,7 +26,7 @@ useEffect(() => {
     }
   };
   fetchCartData();
-}, []);
+}, [dispatch, productRef]);
 
   //form submission
   const handleSubmit = (e) => {
