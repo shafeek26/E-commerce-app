@@ -26,7 +26,7 @@ useEffect(() => {
     }
   };
   fetchCartData();
-}, []);
+}, [productRef, dispatch]);
 
   //form submission
   const handleSubmit = (e) => {
