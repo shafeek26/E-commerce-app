@@ -12,7 +12,6 @@ const Cart = () => {
 console.log(cart)
 
 // fetching cart data
-useEffect(() => {
   const fetchCartData = async () => {
     try {
       const data = await getDocs(productRef);
@@ -25,9 +24,11 @@ useEffect(() => {
       console.log(error);
     }
   };
-  fetchCartData();
-}, [dispatch, productRef]);
+  
 
+  useEffect(() =>{
+    fetchCartData();
+  },[])
   //form submission
   const handleSubmit = (e) => {
     e.preventDefault();
